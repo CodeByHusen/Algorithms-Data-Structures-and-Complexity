@@ -14,4 +14,4 @@ This project aims to provide efficient and well-documented implementations of es
 ## How to Use  
 1. Clone the repository:  
    ```sh
-   git clone https://github.com/CodeByHusen/your-repo-name.git
+   git clone https://github.com/CodeByHusen/Algorithms-Data-Structures-and-Complexity.git
