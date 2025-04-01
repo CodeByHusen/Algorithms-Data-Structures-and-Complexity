@@ -4,9 +4,10 @@ This repository contains implementations and explanations of fundamental **algor
 
 ## Topics Covered  
 
+
 - **Algorithms**: Sorting (QuickSort, MergeSort), Searching (Binary Search), Graph algorithms (Dijkstra, BFS, DFS).  
 - **Data Structures**: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables.  
-- **Complexity Analysis**: Understanding time and space complexity using **Big-O notation**.  
+- **Complexity Analysis**: Understanding time and space complexity using **Big-O notation**..  
 
 ## Purpose  
 This project aims to provide efficient and well-documented implementations of essential algorithms and data structures. It is useful for learning, interview preparation, and optimizing code performance.  
