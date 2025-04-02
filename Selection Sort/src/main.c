@@ -1,6 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
+
+void swap(int *a, int *b) {
+  int tmp = *a;
+  *a = *b;
+  *b = tmp;
+}
 
 void selectionSort(int A[], int n) {
     for (int j = 0; j< n - 1; j++) {
