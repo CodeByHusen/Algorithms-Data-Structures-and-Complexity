@@ -25,9 +25,27 @@ void selectionSort(int A[], int n) {
     }
   }
 
-int main(int argc, char const *argv[])
-{
-    printf("Selection Sort\n");
-
-    return 0;
-}
+  int main()
+  {
+    char line[256];
+      fgets( line, sizeof(line), stdin);
+   
+      char *token;
+      token = strtok(line, " ");
+   
+      int A[16];  
+      int n=0;
+      while( token != NULL ) {
+          A[n++] = atoi(token);
+          token = strtok(NULL, " ");
+      }
+  
+      selectionSort(A, n);
+  
+          for( int i=0; i<n; ++i ) {
+          printf("%i ", A[i]);   
+      }
+      printf("\n");
+      
+      return 0;
+  }
