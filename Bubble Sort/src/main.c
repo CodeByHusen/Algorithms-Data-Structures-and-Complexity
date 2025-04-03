@@ -48,3 +48,9 @@ printf("\n");
 
 return 0;
 }
+
+
+/*
+    input=3 6 2 5 18 -3 2
+    output=-3 2 2 3 5 6 18
+*/
