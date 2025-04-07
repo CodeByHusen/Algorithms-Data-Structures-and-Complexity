@@ -1,4 +1,8 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 
@@ -21,9 +25,27 @@ void insertion_sort(int* arr, int n)
 }
 
 
-int main(int argc, char const *argv[])
-{
-    
+int main(){
 
-    return 0;
+    char line[256];
+fgets( line, sizeof(line), stdin);
+
+char *token;
+token = strtok(line, " ");
+
+int A[16];  
+int n=0;
+while( token != NULL ) {
+    A[n++] = atoi(token);
+    token = strtok(NULL, " ");
+}
+
+insertion_sort(A, n);
+for( int i=0; i<n; ++i ) {
+    printf("%i ", A[i]);   
+}
+printf("\n");
+
+
+return 0;
 }
