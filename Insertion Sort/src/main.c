@@ -1,6 +1,13 @@
 #include <stdio.h>
 
 
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+  }
+
 void insertion_sort(int* arr, int n)
 {
 	int i, j, k;
