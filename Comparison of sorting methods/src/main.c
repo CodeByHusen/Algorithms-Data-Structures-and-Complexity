@@ -13,7 +13,7 @@ void swap(int *xp, int *yp)
     *yp = temp;
 }
 
-
+/* ---------- Bubble Sort--------------
 void bubbleSort(int A[], int n)
 {
    int i, j;
@@ -24,6 +24,38 @@ void bubbleSort(int A[], int n)
            if (A[j] > A[j+1])
               swap(&A[j], &A[j+1]);
 }
+*/
+
+/* ----------------- Insertion Sort------------
+void insertion_sort(int* arr, int n)
+{
+	int i, j, k;
+	for(i = 1; i<n; ++i){
+		int temp = arr[i];
+
+		for(j = i; j > 0 && arr[j -1] > temp; --j)
+		swap(&arr[j - 1], &arr[j]);
+
+	}
+}*/
+
+
+
+/*----------------- Selection Sort--------------
+void selectionSort(int A[], int n) {
+    for (int j = 0; j< n - 1; j++) {
+      int min = j;
+      for (int i = j + 1; i < n; i++) {
+  
+        if (A[i] < A[min])
+          min = i;
+      }
+  
+      swap(&A[min], &A[j]);
+    }
+  }*/
+
+
 
 int main()
 {
