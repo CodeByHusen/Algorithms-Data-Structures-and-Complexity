@@ -32,6 +32,16 @@ void free_List(struct List *p)
 	free(p);
 }
 
+struct List* insert_head(struct List* L, int key)  // ins. key as new list head
+{
+	struct List *q = new_List(key);
+	q->next = L;
+    L = q;
+    return L;
+
+	
+};
+
 
 
 int main()
