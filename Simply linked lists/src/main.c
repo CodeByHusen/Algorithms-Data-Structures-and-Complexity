@@ -54,7 +54,23 @@ void insert_after(struct List* p, int key)  //ins.key after list elem. p
 	//p->next =q;
 }
 
+struct List *delete_head(struct List *L) // del. first elem. from list
+{
+    if (L == NULL)
+    {
+        return NULL;
+    }
+    struct List *p = L->next;
+    free_List(L);
+    L = p;
+    return L;
+    /* struct List* removed;
 
+     if (L == NULL)		return NULL;
+     removed = L;
+     L = removed ->next;
+     free(removed);*/
+};
 
 int main()
 {
