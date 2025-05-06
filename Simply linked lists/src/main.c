@@ -43,6 +43,18 @@ struct List* insert_head(struct List* L, int key)  // ins. key as new list head
 };
 
 
+void insert_after(struct List* p, int key)  //ins.key after list elem. p
+{
+	struct List *q = new_List(key);
+	
+    q-> next = p->next;
+    p->next = q;
+	//q->key=key;
+	//q->next = p ->next;
+	//p->next =q;
+}
+
+
 
 int main()
 {
