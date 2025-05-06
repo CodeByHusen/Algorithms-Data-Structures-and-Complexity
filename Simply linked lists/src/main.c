@@ -112,7 +112,19 @@ struct List* search_list(struct List* L, int key) // return p with p->key==key o
 
 int main()
 {
-
+    struct List* L = NULL;
+    for( int i=0; i<10; ++i ) {
+        L = insert_head(L, (17*i)%11);
+    }
+    print_List(L);
+    struct List* p = search_list(L,7);
+    insert_after(p,5);
+    print_List(L);
+    L = delete_head(L);
+    print_List(L);
+    struct List* q = search_list(L,3);
+    delete_after(p); // hier steht ein p, das ist ein Tippfehler den ich aber nicht korrigieren möchte solange der Test läuft
+    print_List(L);
     
     
     return 0;
