@@ -81,6 +81,18 @@ void delete_after(struct List* p)  // del. elem. after p from list
     free(q);
 }
 
+
+void print_List(struct List* L)  // prints all list elements in one line like "[42 12 7 9]"
+{
+	printf("[ ");
+	struct List* q = L;
+	while (q != NULL){
+		printf("%d ", q->key);
+		q = q->next;
+	}
+	printf("]\n");
+}
+
 int main()
 {
 
