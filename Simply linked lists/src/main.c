@@ -72,6 +72,15 @@ struct List *delete_head(struct List *L) // del. first elem. from list
      free(removed);*/
 };
 
+
+void delete_after(struct List* p)  // del. elem. after p from list
+{
+    struct List* q;
+    q = p -> next;
+    p->next = q ->next;
+    free(q);
+}
+
 int main()
 {
 
