@@ -26,6 +26,12 @@ struct List *new_List(int key)
     return p;
 };
 
+// deconstructs a List element p
+void free_List(struct List *p)
+{
+	free(p);
+}
+
 
 
 int main()
