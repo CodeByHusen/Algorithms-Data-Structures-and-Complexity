@@ -93,6 +93,23 @@ void print_List(struct List* L)  // prints all list elements in one line like "[
 	printf("]\n");
 }
 
+
+struct List* search_list(struct List* L, int key) // return p with p->key==key or NULL
+{
+	struct List *q = L;
+	
+	while(q != NULL)
+	{
+		if(q-> key == key)
+		{
+			return q;
+		}
+		q=q->next;
+	}
+	return NULL;
+};
+
+
 int main()
 {
 
