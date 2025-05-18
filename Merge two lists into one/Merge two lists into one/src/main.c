@@ -28,6 +28,11 @@ struct List *new_List(int key)
     return p;
 };
 
+void free_List(struct List *p)
+{
+	free(p);
+}
+
 int main(int argc, char const *argv[])
 {
     
