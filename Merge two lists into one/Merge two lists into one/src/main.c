@@ -89,6 +89,38 @@ void MoveNode(struct List** destRef, struct List** sourceRef)
     *destRef = newNode;
 }
 
+struct List* merge(struct List* L1, struct List* L2)
+{
+    struct List* result = NULL;
+    struct List** lastPtrRef = &result;
+     
+  while(1)
+  {
+    if (L1 == NULL)
+    {
+      *lastPtrRef = L2;
+       break;
+    }
+    else if (L2==NULL)
+    {
+       *lastPtrRef = L1;
+       break;
+    }
+    if(L1->key <= L2->key)
+    {
+      MoveNode(lastPtrRef, &L1);
+    }
+    else
+    {
+      MoveNode(lastPtrRef, &L2);
+    }
+   
+    /* tricky: advance to point to the next ".next" field */
+    lastPtrRef = &((*lastPtrRef)->next);
+  }
+  return(result);
+};
+
 int main(int argc, char const *argv[])
 {
     
