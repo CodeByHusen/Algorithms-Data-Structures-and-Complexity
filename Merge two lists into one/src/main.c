@@ -121,15 +121,33 @@ struct List* merge(struct List* L1, struct List* L2)
   return(result);
 };
 
+struct List* merge_alternate(struct List* L1, struct List* L2)
+{
+    struct List* result = NULL;
+    struct List** lastPtrRef = &result;
+
+    while (L1 != NULL || L2 != NULL) {
+        if (L1 != NULL) {
+            MoveNode(lastPtrRef, &L1);
+            lastPtrRef = &((*lastPtrRef)->next);
+        }
+        if (L2 != NULL) {
+            MoveNode(lastPtrRef, &L2);
+            lastPtrRef = &((*lastPtrRef)->next);
+        }
+    }
+
+    return result;
+}
+
 int main()
 {
+    printf("Input (L1 and L2):\n");
     struct List* L1 = read_list();
     struct List* L2 = read_list();
 
-    //print_List(L1);
-    //print_List(L2);
-
-    struct List* L = merge(L1, L2);
+    struct List* L = merge_alternate(L1, L2);
+    printf("Output:\n");
     print_List(L);
 
     return 0;
