@@ -121,7 +121,16 @@ struct List* merge(struct List* L1, struct List* L2)
   return(result);
 };
 
-int main(int argc, char const *argv[])
+int main()
 {
-    
+    struct List* L1 = read_list();
+    struct List* L2 = read_list();
+
+    //print_List(L1);
+    //print_List(L2);
+
+    struct List* L = merge(L1, L2);
+    print_List(L);
+
+    return 0;
 }
