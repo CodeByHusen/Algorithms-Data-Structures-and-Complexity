@@ -73,6 +73,22 @@ struct List* read_list()
 
 }
 
+void MoveNode(struct List** destRef, struct List** sourceRef)
+{
+    /* the front source node  */
+    struct List* newNode = *sourceRef;
+    assert(newNode != NULL);
+ 
+    /* Advance the source pointer */
+    *sourceRef = newNode->next;
+ 
+    /* Link the old dest off the new node */
+    newNode->next = *destRef;
+ 
+    /* Move dest to point to the new node */
+    *destRef = newNode;
+}
+
 int main(int argc, char const *argv[])
 {
     
