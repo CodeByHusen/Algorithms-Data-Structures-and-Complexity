@@ -33,6 +33,17 @@ void free_List(struct List *p)
 	free(p);
 }
 
+void print_List(struct List* L)  // prints all list elements in one line like 
+{
+	printf("[ ");
+	struct List* q = L;
+	while (q != NULL){
+		printf("%d ", q->key);
+		q = q->next;
+	}
+	printf("]\n");
+}
+
 int main(int argc, char const *argv[])
 {
     
