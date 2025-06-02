@@ -28,6 +28,12 @@ struct List *new_List(int key)
     return p;  // Return pointer to the new node
 }
 
+// Frees the memory of a single node (not the entire list)
+void free_List(struct List *p)
+{
+	free(p);
+}
+
 
 
 
