@@ -109,5 +109,10 @@ struct List* read_list()
 
 int main()
 {
+    struct List* L1 = read_list();    // Read list from user input
+    struct List* L = revert(L1);      // Reverse the list
+    print_List(L);                    // Print the reversed list
+
+    return 0;
 
 }
