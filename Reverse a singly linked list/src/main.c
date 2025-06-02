@@ -52,6 +52,18 @@ struct List* revert(struct List* L)
     return p;  // Return the new head of the reversed list
 }
 
+// Prints all elements of the list in one line, e.g. [ 1 2 3 ]
+void print_List(struct List* L)
+{
+    printf("[ ");
+    struct List* q = L;
+    while (q != NULL)
+    {
+        printf("%d ", q->key);  // Print current node's value
+        q = q->next;            // Move to next node
+    }
+    printf("]\n");
+}
 
 int main()
 {
