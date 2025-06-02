@@ -34,7 +34,23 @@ void free_List(struct List *p)
 	free(p);
 }
 
+// Reverses a singly linked list
+struct List* revert(struct List* L)
+{
+    struct List* q;       // Temporary pointer to store current node
+    struct List* p = NULL;  // Pointer to the head of the reversed list
 
+    // Traverse the list
+    while (L)
+    {
+        q = L;         // Store current node
+        L = L->next;   // Move to the next node in the original list
+        q->next = p;   // Reverse the link: point current node to the new list
+        p = q;         // Move the head of the new list to the current node
+    }
+
+    return p;  // Return the new head of the reversed list
+}
 
 
 int main()
