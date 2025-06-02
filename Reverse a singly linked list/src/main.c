@@ -65,6 +65,48 @@ void print_List(struct List* L)
     printf("]\n");
 }
 
+// Reads a list of integers from standard input
+// Input ends when a 0 is entered
+struct List* read_list()
+{
+    char line[256];
+    fgets(line, sizeof(line), stdin);  // Read a line from input
+
+    struct List* L = NULL;       // Head of the list
+    struct List* last = NULL;    // Pointer to the last node in the list
+
+    // Split the line into tokens (numbers), using space and newline as delimiters
+    char* number = strtok(line, " \n");
+
+    if (number == NULL) {
+        return L;  // If no number was entered, return empty list
+    }
+
+    int key = atoi(number);  // Convert first token to integer
+
+    // Keep reading numbers until 0 is entered
+    while (key != 0) {
+        struct List* p = new_List(key);  // Create new node
+
+        if (L == NULL) {
+            L = p;  // First node becomes the head
+        } else {
+            last->next = p;  // Append to the end of the list
+        }
+
+        last = p;  // Update the last node pointer
+
+        number = strtok(NULL, " \n");  // Read next token
+        if (number == NULL) {
+            return L;  // End of input
+        }
+
+        key = atoi(number);  // Convert to integer
+    }
+
+    return L;  // Return the constructed list
+}
+
 int main()
 {
 
